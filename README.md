@@ -1,3 +1,5 @@
+**MetaSlider Fork** - Some of the code alterations exist inside of [MetaSlider](http://wordpress.org/plugins/ml-slider), but changes here are specific to the standalone plugin and are added here in the spirit of open-source contribution.  
+
 **Maintainer's Wanted!** - Ineterested in contributing regularly to Nivo Slider development? [Get in touch](https://themeisle.com/contact/)
 
 # Nivo Slider
