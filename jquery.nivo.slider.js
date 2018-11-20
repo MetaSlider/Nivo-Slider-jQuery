@@ -96,25 +96,26 @@
         //Create caption
         slider.append($('<div class="nivo-caption"></div>'));
         
-        // Process caption function
-        var processCaption = function(settings){
-            var nivoCaption = $('.nivo-caption', slider);
-            if(vars.currentImage.attr('title') != '' && vars.currentImage.attr('title') != undefined){
-                var title = vars.currentImage.attr('title');
-                if(title.substr(0,1) == '#') title = $(title).html();   
+		// Process caption function
+		var processCaption = function(settings) {
+			var nivoCaption = $('.nivo-caption', slider)
+			if (vars.currentImage.data('caption')) {
+				var caption = vars.currentImage.data('caption')
+				if ('#' === caption.substr(0, 1)) caption = $(caption).html()
 
-                if(nivoCaption.css('display') == 'block'){
-                    setTimeout(function(){
-                        nivoCaption.html(title);
-                    }, settings.animSpeed);
-                } else {
-                    nivoCaption.html(title);
-                    nivoCaption.stop().fadeIn(settings.animSpeed);
-                }
-            } else {
-                nivoCaption.stop().fadeOut(settings.animSpeed);
-            }
-        }
+				if ('block' === nivoCaption.css('display')) {
+					setTimeout(function() {
+						nivoCaption.html(caption)
+					}, settings.animSpeed)
+				} else {
+					nivoCaption.html(caption)
+					nivoCaption.stop().fadeIn(settings.animSpeed)
+				}
+				
+			} else {
+				nivoCaption.stop().fadeOut(settings.animSpeed)
+			}
+		}
         
         //Process initial  caption
         processCaption(settings);
